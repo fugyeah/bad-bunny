@@ -35,7 +35,7 @@ export async function POST(req) {
             subject: `${senderName} is sending you a message of positivity!`,
             text: message,
             html: `<strong>${message}</strong>`,
-            react: EmailTemplate(message, recipientName)
+            react: EmailTemplate(message, senderName, recipientName)
           });
 
           const responseData = {
