@@ -39,7 +39,7 @@ const EmailTemplate = (
         </Section>
         <Text style={paragraph}>
           hip hip,
-          <br />- Good Rabbit Team & {senderName}
+          <br />- Good Rabbit Team & '${senderName}'
         </Text>
         <Text style={paragraph}>
             <Link style={link} href={homeLink}>
