@@ -18,7 +18,7 @@ const baseUrl = process.env.VERCEL_URL
   : 'http://localhost:3000';
 
 const EmailTemplate = (
-  message, reciepientName, homeLink="https://www.goodrabb.it",
+  message, reciepientName, senderName, homeLink="https://www.goodrabb.it",
 ) => (
   <Html>
     <Head />
@@ -39,7 +39,7 @@ const EmailTemplate = (
         </Section>
         <Text style={paragraph}>
           hip hip,
-          <br />- Good Rabbit Team
+          <br />- Good Rabbit Team & {senderName}
         </Text>
         <Text style={paragraph}>
             <Link style={link} href={homeLink}>
