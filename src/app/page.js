@@ -13,10 +13,11 @@ export default function Home() {
         >
           <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
             <Image
-              src="/wishwide.png"
+              src="/goodrabbit_logo.png.png"
               alt="Wish you were Here"
-              width={897}
-              height={119}
+              className="dark:invert"
+              width={100}
+              height={24}
               priority
             />
           </div>
@@ -98,6 +99,27 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             The Governor will receive an email generated postcard from chatGPT
           </p>
+        </a>
+      </div>
+      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+        <Form />
+      </div>
+               <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
+        <a
+          className="flex place-items-center gap-2 p-8"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
+            <Image
+              src="/WishYouWereHere.png"
+              alt="Wish you were Here"
+              width={897}
+              height={119}
+              priority
+            />
+          </div>
         </a>
       </div>
       <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
