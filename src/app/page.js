@@ -4,7 +4,7 @@ import Form from './components/main-form';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-8 md:p-12 lg:p-24">
-      <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-6">
+      <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4">
         <a
           className="flex place-items-center gap-2 p-8"
           href=""
