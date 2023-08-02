@@ -39,12 +39,13 @@ export async function POST(req) {
         // Try to send email
         try {
           const data = await resend.emails.send({
-            from: "hello@goodrabb.it",
-            to: email, // For testing use delivered@resend.dev
-            subject: "Random act of positivity!",
+            from: `${senderName} <hello@hellofla.com>`,
+            to: email, 
+            cc: senderEmail,
+            subject: `${senderName} is wishing you were here!`,
             text: message,
             html: `<strong>${message}</strong>`,
-            react: EmailTemplate(message, recipientName)
+            react: EmailTemplate(message, senderName, recipientName)
           });
 
           const responseData = {
@@ -69,7 +70,7 @@ export async function POST(req) {
         }
       } else {
         // If text failed sentiment analysis
-        return new NextResponse(JSON.stringify({ error: "say nicer things~" }), {
+        return new NextResponse(JSON.stringify({ error: "say meaner things~" }), {
           status: 400,
           headers: {
             'Content-Type': 'application/json'

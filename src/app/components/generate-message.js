@@ -13,7 +13,7 @@ const generateMessage = async ({
         },
         body: JSON.stringify({
           model: "text-davinci-003",
-          prompt: `Write a nice message (no more than 88 words) of positivity for ${recipientName}. I am a friend but that's irrelevant. Some relevant information are ${extra}.`,
+          prompt: `Write a message (no more than 88 words) of abandonment for ${recipientName}. You miss him and want him to return to Florida to help with (pick 2 of the following) the property insurance crisis, flooding, inflation, housing shortages, education policy, pollution, and higher taxes and fees. Some relevant information are ${extra}.`,
           max_tokens: 120,
           temperature: 1,
           top_p: 0.77,

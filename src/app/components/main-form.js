@@ -5,8 +5,9 @@ import { useState } from "react";
 export default function Form() {
   const [formData, setFormData] = useState({
     senderName: "",
-    recipientName: "",
-    email: "",
+    senderEmail: "", 
+    recipientName: "Governor Ron DeSantis",
+    email: "aaronnevins@hotmail.com",
     extra: ""
   });
 
@@ -31,9 +32,12 @@ export default function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsGenerating(true);
-
+  
     const data = new FormData(e.currentTarget);
-    
+    data.set("senderEmail", formData.senderEmail);
+    data.set("recipientName", formData.recipientName);
+    data.set("email", formData.email);
+
     try {
       const response = await fetch('/openai/api/route.js', {
         method: 'post',
@@ -51,7 +55,7 @@ export default function Form() {
           throw new Error("An error has occurred");
         }
       }
-      alert('Positivity sent to your friend~ gRabbit');
+      alert('A Message has been sent to the Governor~ HelloFLA');
 
     } catch (err) {
       console.error(err);
@@ -82,30 +86,23 @@ export default function Form() {
           />
         </div>
         <div className="flex flex-col">
-          <label className="sr-only" htmlFor="recipientName">Recipient's Name:</label>
-          <input 
-            type="text" 
-            id="recipientName" 
-            name="recipientName" 
-            maxLength={88}
-            value={formData.recipientName}
-            placeholder="Their Name"
-            onChange={handleInput}
-            className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
-            required />
-          <label className="sr-only" htmlFor="email">Their Email:</label>
-        </div>
+            <label className="sr-only" htmlFor="senderEmail">
+              Your Email:
+            </label>
+            <input
+              type="email"
+              id="senderEmail"
+              name="senderEmail"
+              maxLength={50}
+              value={formData.senderEmail}
+              placeholder="Your Email (Optional)"
+              onChange={handleInput}
+              className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
+            />
+          </div>
         <div className="flex flex-col">
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            maxLength={50}
-            value={formData.email}
-            placeholder="Their Email"
-            onChange={handleInput}
-            className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
-            required />
+          <label className="sr-only" htmlFor="recipientName">Recipient's Name: Governor Ron DeSantis</label>
+          <label className="sr-only" htmlFor="email">Their Email: GovernorRon.DeSantis@eog.myflorida.com</label>
         </div>
         <div className="flex flex-col">
           <label className="sr-only" htmlFor="extra">Anything you want to ADD? (Optional)</label>
@@ -125,13 +122,13 @@ export default function Form() {
           type="submit"
           className={`bg-transparent hover:bg-amber-600 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded
             ${
-              isGenerating || formData.email === "" || formData.recipientName == ""
+              isGenerating || formData.senderEmail === "" || formData.senderName == ""
                 ? "cursor-not-allowed opacity-50"
                 : ""
             }`}
-          disabled={isGenerating || formData.email === "" || formData.recipientName == ""}
+          disabled={isGenerating || formData.senderEmail === "" || formData.senderName == ""}
         >
-          {isGenerating ? "Sending..." : "Send Positivity"}
+          {isGenerating ? "Sending..." : "Sending Postcard"}
         </button>
       </form>
     </div>

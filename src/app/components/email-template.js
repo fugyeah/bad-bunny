@@ -18,48 +18,48 @@ const baseUrl = process.env.VERCEL_URL
   : 'http://localhost:3000';
 
 const EmailTemplate = (
-  message, reciepientName, homeLink="https://www.goodrabb.it",
+  message, reciepientName, homeLink="https://www.hellofla.com",
 ) => (
   <Html>
     <Head />
-    <Preview>Random act of Positivity from Good Rabbit.</Preview>
+    <Preview>Wishing you were here!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/goodrabbit_logo.png`}
-          alt="Good Rabbit Logo"
-          width={48}
-          height={48}
+          src={`${baseUrl}/wishwide.jpg`}
+          alt="Wish You Were Here Postcard"
+          width={897}
+          height={119}
         />
-        <Heading style={heading}>Your gRabbit~</Heading>
+        <Heading style={heading}>Dear Governor DeSantis!</Heading>
         <Section style={body}>
           <Text style={paragraph}>
             {message}
           </Text>
         </Section>
         <Text style={paragraph}>
-          hip hip,
-          <br />- Good Rabbit Team
+          Miss you,
+          <br />- HelloFLA! Team & {senderName}
         </Text>
         <Text style={paragraph}>
             <Link style={link} href={homeLink}>
-            🐰 Pass gRabbit forward! Click here to share positivity. 🐇
+             Pass it forward! Click here to share! 
             </Link>
           </Text>
         <Hr style={hr} />
         <Img
-          src={`${baseUrl}/goodrabbit_logo.png`}
-          alt="Good Rabbit Logo"
-          width={32}
-          height={32}
+          src={`${baseUrl}/greetings.jpg`}
+          alt="Postcard"
+          width={1120}
+          height={850}
           style={{
             WebkitFilter: 'grayscale(100%)',
             filter: 'grayscale(100%)',
             margin: '20px 0', 
           }}
         />
-        <Text style={footer}>gRabbit is a small dosage of positivity encouragement.</Text>
-        <Text style={footer}>Good Rabbit Foundation.</Text>
+        <Text style={footer}>HelloFLA is owned and operated by Painted Dog Productions, LLC as a demonstration for our customizable webapp.</Text>
+        <Text style={footer}>2023 Painted Dog Productions</Text>
         <Text style={footer}>
           This address will not receive email replies.
         </Text>
