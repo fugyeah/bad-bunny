@@ -180,7 +180,9 @@ export default function Form() {
           type="button" 
           className="bg-transparent hover:bg-amber-600 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded"
   onClick={handleGenerateAndSchedule}
->
+  disabled={isGenerating || formData.email === "" || formData.recipientName === ""}
+          >
+  
   Generate and Schedule Letters
 </button>
 

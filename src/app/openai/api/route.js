@@ -3,11 +3,38 @@ import EmailTemplate from "@/app/components/email-template";
 import { Resend } from "resend";
 import { query } from "@/app/components/senti-analysis";
 import generateMessage from "@/app/components/generate-message"
-import formData from "@/app/components/main-form"
 import schedule from 'node-schedule';
+import formData from "@/app/components/main-form"
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const pool = require('../../../../db');
+
+function getRandomDate() {
+  const now = new Date();
+  const nextMonth = new Date();
+  nextMonth.setMonth(now.getMonth() + 1);
+
+  return new Date(now.getTime() + Math.random() * (nextMonth.getTime() - now.getTime()));
+}
+
+const scheduleLetter = async (letter) => {
+  const sendDate = getRandomDate();
+
+  schedule.scheduleJob(sendDate, async () => {
+    try {
+      await resend.emails.send({
+        from: "hello@goodrabb.it",
+        to: letter.email,
+        subject: "Random act of positivity!",
+        text: letter.message,
+        html: `<strong>${letter.message}</strong>`,
+        react: EmailTemplate(letter.message, letter.recipientName)
+      });
+    } catch (err) {
+      console.error('An error occurred:', err);
+    }
+  });
+}
 
 export async function POST(req) {
   try {
@@ -39,15 +66,13 @@ export async function POST(req) {
             react: EmailTemplate(message, senderName, recipientName)
           });
 
-          // Create a letter object
-    const letter = {
-      message: message,
-      email: email,
-      recipientName: recipientName
-    };
+          const letter = {
+            message: message,
+            email: email,
+            recipientName: recipientName
+          };
 
- // Schedule the letter to be sent
-    await scheduleLetter(letter);
+          await scheduleLetter(letter);
 
           const responseData = {
             data: `${senderName} ${recipientName} ${email} ${extra}`,
@@ -90,31 +115,25 @@ export async function POST(req) {
   }
 }
 
-function getRandomDate() {
-  const now = new Date();
-  const nextMonth = new Date();
-  nextMonth.setMonth(now.getMonth() + 1);
+export async function handleGenerateAndSchedule(req) {
+  try {
+    const body = await req.json();
+    const { senderName, senderEmail, recipientName, email, extra } = body;
 
-  return new Date(now.getTime() + Math.random() * (nextMonth.getTime() - now.getTime()));
-}
-
-const scheduleLetter = async (letter) => {
-  // Generate a random date and time within the next month
-  const sendDate = getRandomDate();
-
-  // Schedule the letter to be sent at the generated date and time
-  schedule.scheduleJob(sendDate, async () => {
-    try {
-      await resend.emails.send({
-        from: "hello@goodrabb.it",
-        to: letter.email,
-        subject: "Random act of positivity!",
-        text: letter.message,
-        html: `<strong>${letter.message}</strong>`,
-        react: EmailTemplate(letter.message, letter.recipientName)
-      });
-    } catch (err) {
-      console.error('An error occurred:', err);
+    if (!body.recipientName) {
+      return new NextResponse('Recipient\'s name not found', { status: 400 });
     }
-  });
+
+    const letter = {
+      message: await generateMessage({ recipientName, extra }),
+      email: email,
+      recipientName: recipientName
+    };
+
+    await scheduleLetter(letter);
+
+  } catch (error) {
+    console.error('An error occurred:', error);
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
 }
