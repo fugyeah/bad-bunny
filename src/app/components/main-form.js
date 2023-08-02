@@ -6,8 +6,6 @@ export default function Form() {
   const [formData, setFormData] = useState({
     senderName: "",
     senderEmail: "", 
-    recipientName: "Governor Ron DeSantis",
-    email: "aaronnevins@hotmail.com",
     extra: ""
   });
 
@@ -33,19 +31,24 @@ export default function Form() {
     e.preventDefault();
     setIsGenerating(true);
   
-    const data = new FormData(e.currentTarget);
-    data.set("senderEmail", formData.senderEmail);
-    data.set("recipientName", formData.recipientName);
-    data.set("email", formData.email);
-
+    // Get user input data from form
+    const userInputData = new FormData(e.currentTarget);
+  
+    // Create new data object with user input data and hardcoded data
+    const data = {
+      ...Object.fromEntries(userInputData),
+      recipientName: "Governor Ron DeSantis",
+      email: "aaronnevins@hotmail.com"
+    };
+  
     try {
-      const response = await fetch('/openai/api/route.js', {
+      const response = await fetch('openai/api/', {
         method: 'post',
-        body: JSON.stringify(Object.fromEntries(data)),
+        body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
         }
-      });
+      });  
 
       if (!response.ok) {
         const errorResponse = await response.json();
@@ -80,7 +83,7 @@ export default function Form() {
             name="senderName"
             maxLength={50}
             value={formData.senderName}
-            placeholder="Your Name (Optional)"
+            placeholder="Your Name (Required)"
             onChange={handleInput}
             className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
           />
@@ -95,14 +98,14 @@ export default function Form() {
               name="senderEmail"
               maxLength={50}
               value={formData.senderEmail}
-              placeholder="Your Email (Optional)"
+              placeholder="Your Email (Required)"
               onChange={handleInput}
               className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
             />
           </div>
         <div className="flex flex-col">
-          <label className="sr-only" htmlFor="recipientName">Recipient's Name: Governor Ron DeSantis</label>
-          <label className="sr-only" htmlFor="email">Their Email: GovernorRon.DeSantis@eog.myflorida.com</label>
+          Recipient's Name: Governor Ron DeSantis</div>
+          <div className="flex flex-col">Their Email: GovernorRon.DeSantis@eog.myflorida.com
         </div>
         <div className="flex flex-col">
           <label className="sr-only" htmlFor="extra">Anything you want to ADD? (Optional)</label>

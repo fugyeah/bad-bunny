@@ -17,10 +17,10 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000';
 
-const EmailTemplate = (
-  message, reciepientName, homeLink="https://www.hellofla.com",
-) => (
-  <Html>
+  const EmailTemplate = (
+    message, senderName, homeLink="https://www.hellofla.com",
+  ) => (
+    <Html>
     <Head />
     <Preview>Wishing you were here!</Preview>
     <Body style={main}>

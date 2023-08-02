@@ -13,7 +13,7 @@ export async function POST(req) {
     // Use hardcoded recipientName and email if they're not provided in the request body
     const recipientName = body.recipientName || "Governor Ron DeSantis";
     const email = body.email || "aaronnevins@hotmail.com";
-    const { senderName, senderEmail, extra } = body;
+    const { senderName, extra } = body;
 
     console.log("generating message");
     const message = await generateMessage({
@@ -70,8 +70,6 @@ export async function POST(req) {
           }
         });
       }
-
-      
     } catch (error) {
       console.error('Request failed with error:', error);
       return new NextResponse(JSON.stringify({ error: "Error with sentiment analysis query" }), {
