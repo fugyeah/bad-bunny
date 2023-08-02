@@ -82,10 +82,7 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
-        <Form />
-      </div>
-               <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
+    <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
         <a
           className="flex place-items-center gap-2 p-8"
           href=""
@@ -102,6 +99,9 @@ export default function Home() {
             />
           </div>
         </a>
+                  <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+        <Form />
+      </div>
       </div>
      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         A service of HelloFLA as a demonstration of web app that automatically customizes each constituent letter on your issue advocacy campaigns using GPT! Copyright 2023 Painted Dog Productions, LLC
