@@ -72,22 +72,22 @@ export default function Form() {
   }
 
   return(
-  <div className="max-w-7x1 w-full mx-auto sm:px-6 lg:px-8 py-12">
-    <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-12 ">
-      <form onSubmit={handleSubmit} className="grid gap-y-5 text-amber-700 mx-2">
-        <div className="flex flex-col">
-          <label className="sr-only" htmlFor="senderName">Your Name:</label>
-          <input 
-            type="text" 
-            id="senderName" 
-            name="senderName"
-            maxLength={50}
-            value={formData.senderName}
-            placeholder="Your Name (Required)"
-            onChange={handleInput}
-            className="px-2 block w-full rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
-          />
-        </div>
+    <div className="max-w-7x1 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto sm:px-6 lg:px-8 py-12">
+      <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-12 ">
+        <form onSubmit={handleSubmit} className="grid gap-y-5 text-amber-700 mx-2">
+          <div className="flex flex-col">
+            <label className="sr-only" htmlFor="senderName">Your Name:</label>
+            <input 
+              type="text" 
+              id="senderName" 
+              name="senderName"
+              maxLength={50}
+              value={formData.senderName}
+              placeholder="Your Name (Required)"
+              onChange={handleInput}
+              className="px-2 sm:px-3 md:px-4 lg:px-5 block w-full sm:w-3/4 md:w-1/2 lg:w-1/3 rounded-md bg-white border border-gray-40 shadow-s focus:outline-none focus:outline-amber-300"
+            />
+          </div>
         <div className="flex flex-col">
             <label className="sr-only" htmlFor="senderEmail">
               Your Email:
@@ -123,7 +123,7 @@ export default function Form() {
         </div>
         <button 
           type="submit"
-          className={`bg-transparent hover:bg-amber-600 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded
+          className={`bg-transparent hover:bg-amber-600 text-amber-500 font-semibold hover:text-white py-2 px-2 sm:px-3 md:px-4 lg:px-5 border border-amber-500 hover:border-transparent rounded
             ${
               isGenerating || formData.senderEmail === "" || formData.senderName == ""
                 ? "cursor-not-allowed opacity-50"
