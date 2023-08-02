@@ -13,41 +13,16 @@ export default function Home() {
         >
           <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
             <Image
-              src="/goodrabbit_logo.png"
-              alt="Good Rabbit Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
+              src="/wishwide.png"
+              alt="Wish you were Here"
+              width={897}
+              height={119}
               priority
             />
           </div>
         </a>
       </div>
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-<<<<<<< HEAD
-        <p className="md:static lg:pt-8 fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-2xl text-center">
-  Send an e-postcard to the Governor and let him know we miss him in Florida!</p>
-      </div>
-      <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
-        <a
-          className="flex place-items-center gap-2 p-8"
-          href="hellofla.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
-            <Image
-              src="/goodrabbit_logo.png"
-              alt="Good Rabbit Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </div>
-        </a>
-      </div>
-=======
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-2xl text-center">
   Send a e-postcard to the Governor telling him how much we miss him in Florida!</p>
 
@@ -55,7 +30,6 @@ export default function Home() {
         </div>
 
       </div>        
->>>>>>> 76a09e3a430aee08174654558474de5ff3d8d027
        
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
@@ -126,33 +100,11 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
-        <a
-          className="flex place-items-center gap-2 p-8"
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
-            <Image
-              src="/WishYouWereHere.png"
-              alt="Wish you were Here"
-              width={897}
-              height={119}
-              priority
-            />
-          </div>
-        </a>
-      </div>
       <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         <Form />
       </div>
      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
-<<<<<<< HEAD
-        This is a service of HelloFLA as a demonstration of webapp that automatically customizes each constituent letter on your issue advocacy campaigns using GPT AI! Copyright 2023 Painted Dog Productions, LLC
-=======
         A service of HelloFLA as a demonstration of web app that automatically customizes each constituent letter on your issue advocacy campaigns using GPT! Copyright 2023 Painted Dog Productions, LLC
->>>>>>> 76a09e3a430aee08174654558474de5ff3d8d027
       </div>
     </main>
   )
