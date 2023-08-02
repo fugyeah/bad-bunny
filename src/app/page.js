@@ -13,7 +13,7 @@ export default function Home() {
         >
           <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
             <Image
-              src="/WishYouWereHere.png"
+              src="/wishwide.png"
               alt="Wish you were Here"
               width={897}
               height={119}
