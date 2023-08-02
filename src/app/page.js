@@ -99,9 +99,9 @@ export default function Home() {
             />
           </div>
         </a>
-                  <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+       </div>
+        <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         <Form />
-      </div>
       </div>
      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         A service of HelloFLA as a demonstration of web app that automatically customizes each constituent letter on your issue advocacy campaigns using GPT! Copyright 2023 Painted Dog Productions, LLC
