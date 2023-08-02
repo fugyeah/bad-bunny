@@ -1,5 +1,7 @@
 "use client"
 import { useState } from "react";
+import { generateLetters } from './generate-message';
+
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -63,7 +65,19 @@ export default function Form() {
     }
     setIsGenerating(false);
   };
-
+  
+  const handleGenerateAndSchedule = async () => {
+    // Generate 4 letters
+    const letters = await generateLetters({ recipientName: formData.recipientName, extra: formData.extra });
+    
+    // Schedule the letters
+    for (let letter of letters) {
+      await scheduleLetter(letter);
+    }
+  
+    alert('Letters have been generated and scheduled!');
+  };
+  
   return (
     <div className="max-w-7x1 w-full mx-auto sm:px-6 lg:px-8 py-12">
       <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-12 ">
@@ -162,6 +176,14 @@ export default function Form() {
           >
             {isGenerating ? "Sending..." : "Send Positivity"}
           </button>
+          <button 
+          type="button" 
+          className="bg-transparent hover:bg-amber-600 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded"
+  onClick={handleGenerateAndSchedule}
+>
+  Generate and Schedule Letters
+</button>
+
         </form>
       </div>
     </div>

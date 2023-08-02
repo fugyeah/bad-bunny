@@ -32,4 +32,15 @@ const generateMessage = async ({
   }
 }
 
+export const generateLetters = async ({ recipientName, extra }) => {
+  const letters = [];
+
+  for (let i = 0; i < 4; i++) {
+    const letter = await generateMessage({ recipientName, extra });
+    letters.push(letter);
+  }
+
+  return letters;
+};
+
 export default generateMessage;
