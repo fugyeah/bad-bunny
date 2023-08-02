@@ -12,15 +12,17 @@ export default function Home() {
         </div>
 
       </div>        
-       
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+           <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
         <a
+          className="flex place-items-center gap-2 p-8"
           href=""
-          className="group rounded-lg border border-transparent p-2 sm:p-3 md:p-4 lg:p-5 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+        </a>
+      </div>
+      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+              <h2 className={`mb-3 text-2xl font-semibold`}>
             Step 1{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
@@ -29,8 +31,7 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             Put in your name.
           </p>
-        </a>
-
+      
         <a
           href=""
           className="group rounded-lg border border-transparent p-2 sm:p-3 md:p-4 lg:p-5 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -80,30 +81,20 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             The Governor will receive an email generated postcard from chatGPT
           </p>
-        </a>
       </div>
-    <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black mb-4 md:mt-24 lg:mt-0">
-        <a
-          className="flex place-items-center gap-2 p-8"
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
-            <Image
-              src="/WishYouWereHere.png"
-              alt="Wish you were Here"
-              width={897}
-              height={119}
-              priority
-            />
-          </div>
-        </a>
-       </div>
-        <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+      <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
+        <Image
+          src="/WishYouWereHere.png"
+          alt="Wish you were Here"
+          width={897}
+          height={119}
+          priority
+        />
+      </div>
+      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         <Form />
       </div>
-     <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         A service of HelloFLA as a demonstration of web app that automatically customizes each constituent letter on your issue advocacy campaigns using GPT! Copyright 2023 Painted Dog Productions, LLC
       </div>
     </main>
