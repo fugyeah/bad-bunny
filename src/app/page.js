@@ -82,6 +82,7 @@ export default function Home() {
             The Governor will receive an email generated postcard from chatGPT
           </p>
       </div>
+          </a>
       <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
         <Image
           src="/WishYouWereHere.png"
