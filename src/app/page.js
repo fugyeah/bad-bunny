@@ -13,10 +13,11 @@ export default function Home() {
         >
           <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain mx-auto">
             <Image
-              src="/wishwide.png"
-              alt="Wish you were Here"
-              width={897}
-              height={119}
+              src="/goodrabbit_logo.png"
+              alt="Good Rabbit Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
               priority
             />
           </div>
