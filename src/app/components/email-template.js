@@ -26,10 +26,8 @@ const baseUrl = process.env.VERCEL_URL
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/wishwide.jpg`}
+          src={`https://hellofla.com/html/wishwide.png`}
           alt="Wish You Were Here Postcard"
-          width={897}
-          height={119}
         />
         <Heading style={heading}>Dear Governor DeSantis!</Heading>
         <Section style={body}>
@@ -48,7 +46,7 @@ const baseUrl = process.env.VERCEL_URL
           </Text>
         <Hr style={hr} />
         <Img
-          src={`${baseUrl}/greetings.jpg`}
+          src={`https://hellofla.com/html/Greetings.png`}
           alt="Postcard"
           width={1120}
           height={850}
