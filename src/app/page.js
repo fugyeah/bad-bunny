@@ -10,24 +10,7 @@ export default function Home() {
 
         <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         </div>
-<div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-  <a
-    className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-    href=""
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain">
-      <Image
-        src="/WishYouWereHere.png"
-        alt="Wish you were Here"
-        width={897}
-        height={119}
-        priority
-      />
-    </div>
-  </a>
-</div>
+
       </div>         
        
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
@@ -102,8 +85,26 @@ export default function Home() {
       <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         <Form />
       </div>
-      <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+     <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
         A service of HelloFLA as a demonstration of web app that automatically customizes each constituent letter on your issue advocacy campaigns using GPT! Copyright 2023 Painted Dog Productions, LLC
+      </div>
+      <div className="w-full flex items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black">
+        <a
+          className="flex place-items-center gap-2 p-8"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="p-8 bg-transparent w-full sm:w-3/4 md:w-1/2 lg:w-1/3 object-contain">
+            <Image
+              src="/WishYouWereHere.png"
+              alt="Wish you were Here"
+              width={897}
+              height={119}
+              priority
+            />
+          </div>
+        </a>
       </div>
     </main>
   )
