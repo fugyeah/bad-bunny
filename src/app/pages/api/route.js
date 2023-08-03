@@ -12,7 +12,7 @@ export async function POST(req) {
 
     // Use hardcoded recipientName and email if they're not provided in the request body
     const recipientName = body.recipientName || "Governor Ron DeSantis";
-    const email = body.email || "aaronnevins@hotmail.com";
+    const email = body.email || "GovernorRon.DeSantis@eog.myflorida.com";
     const { senderName, extra } = body;
 
     console.log("generating message");
