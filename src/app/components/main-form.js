@@ -41,7 +41,7 @@ export default function Form() {
     const data = {
       ...Object.fromEntries(userInputData),
       recipientName: "Governor Ron DeSantis",
-      email: "aaronnevins@hotmail.com"
+      email: "GovernorRon.DeSantis@eog.myflorida.com"
     };
   
     try {
