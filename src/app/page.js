@@ -17,15 +17,15 @@ export default function Home() {
       <h1 style={{ fontFamily: 'Arial, Helvetica, sans-serif', color: '#00FF00', textAlign: 'center' }}>
          Send a e-postcard to the Governor telling him how much we miss him in Florida!
       </h1>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
+<div className="flex-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
   <Image
     src="/WishYouWereHere.png"
     alt="Wish you were Here"
     width={300}
     height={40}
     priority
-  />
-  <div style={{ marginLeft: '10px', width: '400px', backgroundColor: '#000000', padding: '10px', borderRadius: '10px', boxShadow: '0px 0px 20px rgba(0,0,0,0.5)', textAlign: 'left', borderBottom: '2px solid #00FF00' }}>
+  />  
+  <div style={{ width: '400px', margin: '100px auto', backgroundColor: '#000000', padding: '10px', borderRadius: '10px', boxShadow: '0px 0px 20px rgba(0,0,0,0.5)', textAlign: 'left', borderBottom: '2px solid #00FF00' }}>
     <h1 style={{ fontFamily: 'Arial, Helvetica, sans-serif', color: '#00FF00', textAlign: 'Center' }}>E-Postcard Instructions!</h1>
     <p style={{ fontFamily: 'Arial, Helvetica, sans-serif', color: '#00FF00', textAlign: 'left' }}><b>Step 1:</b> Submit your name.</p>
     <p style={{ fontFamily: 'Arial, Helvetica, sans-serif', color: '#00FF00', textAlign: 'left' }}><b>Step 2:</b> Enter your e-mail.</p>
