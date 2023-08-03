@@ -16,7 +16,14 @@
   }
 }
 
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column !important;
+  }
+}
+
 body {
+  font-family: 'Terminal', monospace;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
