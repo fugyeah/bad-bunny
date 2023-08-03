@@ -26,7 +26,7 @@ const baseUrl = process.env.VERCEL_URL
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`https://hellofla.com/html/wishwide.png`}
+          src={`https://www.hellofla.com/_next/image?url=%2Fwishwide.png&w=384&q=75&dpl=dpl_4fCWHY7Kdrz79ko1qynLKRYz9ATE`}
           alt="Wish You Were Here Postcard"
         />
         <Heading style={heading}>Dear Governor DeSantis!</Heading>
@@ -40,13 +40,13 @@ const baseUrl = process.env.VERCEL_URL
           <br />- HelloFLA! Team & {senderName}
         </Text>
         <Text style={paragraph}>
-            <Link style={link} href={homeLink}>
-             Pass it forward! Click here to share! 
-            </Link>
-          </Text>
+    <a href={homeLink} style={link}>
+        Pass it forward! Click here to share! 
+    </a>
+</Text>
         <Hr style={hr} />
         <Img
-          src={`https://hellofla.com/html/Greetings.png`}
+          src={`https://www.hellofla.com/_next/image?url=%2FWishYouWereHere.png&w=384&q=75&dpl=dpl_4fCWHY7Kdrz79ko1qynLKRYz9ATE`}
           alt="Postcard"
           width={1120}
           height={850}
