@@ -31,6 +31,9 @@ export default function Form() {
     e.preventDefault();
     setIsGenerating(true);
   
+    // Add alert here
+    alert('Please Wait, AI Message Generating...');
+  
     // Get user input data from form
     const userInputData = new FormData(e.currentTarget);
   
@@ -137,7 +140,7 @@ export default function Form() {
             disabled={isGenerating || formData.senderEmail === "" || formData.senderName == ""}
             style={{ color: '#00FF00', borderColor: '#00FF00' }}
           >
-            {isGenerating ? "Sending..." : "Send Postcard"}
+            {isGenerating ? "AI Generating and Sending...Please Wait" : "Send Postcard"}
           </button>
         </form>
       </div>
